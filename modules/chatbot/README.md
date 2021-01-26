@@ -7,7 +7,7 @@
         <img src="../../assets/jonin-services-chatbot.jpg" alt="Jonin Services Image" />
     </a>
     <h3 align="center"> 💠 Chatbot 💠 </h3>
-    <p align="center"> Binary converter
+    <p align="center"> Chatbot with history
         <strong><a href="../../example.js#L29"> Click Here to see code usage </a></strong>
         <br />
         <a href="https://kura.gq"><strong> Visit the creator » </strong></a>

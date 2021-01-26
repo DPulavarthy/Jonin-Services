@@ -2,13 +2,13 @@
     <a href="https://twitter.com/iKurasad">
         <img src="https://img.shields.io/badge/Creator-Kurasad%232521-%23ff0092" alt="Kurasad#2521" />
     </a>
-    <a href="https://github.com/DPulavarthy/Jonin-Services"
+    <a href="../../README.md"
         title="All code regarding Jonin and Jonin Services is protected.">
-        <img src="../../assets/jonin-services-binary.jpg" alt="Jonin Services Image" />
+        <img src="../../assets/jonin-services-sloc.jpg" alt="Jonin Services Image" />
     </a>
-    <h3 align="center"> 💠 Binary 💠 </h3>
-    <p align="center"> Binary converter
-        <strong><a href="../../example.js#L18"> Click Here to see code usage </a></strong>
+    <h3 align="center"> 💠 Sloc 💠 </h3>
+    <p align="center"> File data and sloc getter
+        <strong><a href="../../example.js#L98"> Click Here to see code usage </a></strong>
         <br />
         <a href="https://kura.gq"><strong> Visit the creator » </strong></a>
     </p>
