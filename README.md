@@ -244,7 +244,6 @@ console.log(JSON.stringify(sloc.readFile(readFileSync(`./example.js`, `utf8`))))
 let services = require(`jonin-services`)
 let weather = new services().weather
 
-console.log(`\nJonin-Services: Testing Modules [weather]\n`)
 await weather.get({ degreeType: `F`, lang: `en-US`, search: `dallas, tx` }, (err, res) => {
     if (err) { }
     console.log(`\tWeather/Forecast:`, `\"Dallas, TX\"`, `=>`, JSON.stringify(res))
