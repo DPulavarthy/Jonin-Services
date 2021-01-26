@@ -8,15 +8,15 @@
     </a>
     <h3 align="center"> 💠 Chatbot 💠 </h3>
     <p align="center"> Chatbot with history
-        <strong><a href="../../example.js#L29"> Click Here to see code usage </a></strong>
+        <strong><a href="../../example.js#L43"> Click Here to see code usage </a></strong>
         <br />
         <a href="https://kura.gq"><strong> Visit the creator » </strong></a>
     </p>
     <p align="center">
         <a href="https://discord.gg/H5PwwSJ"> Contact </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Report Bug </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Report Bug </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Request Feature </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Request Feature </a>
     </p>
 </p>

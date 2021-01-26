@@ -4,6 +4,7 @@
  * @name fetch
  * @usage new <Services>().fetch(string)
  */
+
 function _interopDefault(ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex }
 
 var Stream = _interopDefault(require('stream'));

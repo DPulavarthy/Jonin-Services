@@ -1,7 +1,7 @@
 /**
  * @file Connect all modules and make sure all resources are functional.
  * 
- * @name Ganyu_Services
+ * @name Jonin-Services
  * @usage new services()
  * @version 1.0.0
  */

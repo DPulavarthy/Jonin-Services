@@ -15,8 +15,8 @@
     <p align="center">
         <a href="https://discord.gg/H5PwwSJ"> Contact </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Report Bug </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Report Bug </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Request Feature </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Request Feature </a>
     </p>
 </p>

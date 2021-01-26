@@ -8,15 +8,15 @@
     </a>
     <h3 align="center"> 💠 Osu 💠 </h3>
     <p align="center"> osu! info module
-        <strong><a href="../../example.js#L79"> Click Here to see code usage </a></strong>
+        <strong><a href="../../example.js#L151"> Click Here to see code usage </a></strong>
         <br />
         <a href="https://kura.gq"><strong> Visit the creator » </strong></a>
     </p>
     <p align="center">
         <a href="https://discord.gg/H5PwwSJ"> Contact </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Report Bug </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Report Bug </a>
         •
-        <a href="https://github.com/DPulavarthy/Ganyu/issues"> Request Feature </a>
+        <a href="https://github.com/DPulavarthy/Jonin-Services/issues"> Request Feature </a>
     </p>
 </p>
