@@ -1,0 +1,41 @@
+{
+  "name": "jonin-services",
+  "version": "1.0.0",
+  "description": "A cluster of recoded modules for ease of access",
+  "main": "services.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DPulavarthy/Jonin-Services.git"
+  },
+  "keywords": [
+    "jonin",
+    "decode-encode-binary",
+    "binary",
+    "cleverbot-free",
+    "chatbot",
+    "endecodify",
+    "dotenv",
+    "env",
+    "node-fetch",
+    "fetch",
+    "moment-duration-format",
+    "moment",
+    "node-osu",
+    "osu",
+    "@2toad/profanity",
+    "profanity",
+    "sloc-count",
+    "sloc",
+    "weather-js",
+    "weather"
+  ],
+  "author": "Kurasad#2521",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/DPulavarthy/Jonin-Services/issues"
+  },
+  "homepage": "https://github.com/DPulavarthy/Jonin-Services#readme"
+}
