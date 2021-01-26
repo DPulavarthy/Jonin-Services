@@ -8,7 +8,7 @@
     </a>
     <h3 align="center"> 💠 Chatbot 💠 </h3>
     <p align="center"> Binary converter
-        <strong> Click Here to see code usage </strong>
+        <strong><a href="../../example.js#L29"> Click Here to see code usage </a></strong>
         <br />
         <a href="https://kura.gq"><strong> Visit the creator » </strong></a>
     </p>
