@@ -63,7 +63,7 @@ npm install jonin-services
  * @name binary
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let binary = new services().binary
 
 console.log(binary.auto(`Hi`)) // Detect text and return opposite
@@ -85,7 +85,7 @@ console.log(binary.decode(`0100100001101001`)) // Force decode
  * @name chatbot
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let chatbot = new services().chatbot
 
 let noHistoryChat = await chatbot.get(`Hi`)
@@ -107,7 +107,7 @@ console.log(historyChat) // Request a message with history
  * @name endecodify
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let endecodify = new services().endecodify
 
 console.log(endecodify.encode(`Hi`)) // Encode normal text
@@ -135,7 +135,7 @@ node . decode 8x05h 8x09E 8x07o 8x22iI
  * @usage  new <Services>().env.config()
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 
 new services().env.config() // Run config
 
@@ -153,7 +153,7 @@ console.log(process.env.TOKEN) // Access env data
  * @usage new <Services>().fetch(string)
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let fetch = new services().fetch
 
 let jsonFetch = await fetch(`https://jsonplaceholder.typicode.com/todos/1`) // Fetch site
@@ -173,7 +173,7 @@ console.log(await jsonFetch.json()) // Log JSON
  * @usage new <Services>().moment(module[MOMENT])
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let moment = require(`moment`) // https://www.npmjs.com/package/moment
 new services().moment(moment)
 
@@ -193,7 +193,7 @@ console.log(moment.duration((new Date().getTime() + 500000000) - new Date().getT
  * @usage new <Services>(object[TOKEN]).osu.getUser(object[USER])
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let token = `` // ADD TOKEN HERE
 let osu = new services({ osu: token }).osu
 
@@ -213,7 +213,7 @@ console.log(`\tUser Fetch:`, `fangary12`, `=>`, JSON.stringify(osuUser))
  * @usage new <Services>().profanity.clean(string)
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let profanity = new services().profanity
 
 console.log(profanity.clean(`So much damn code`)) // Clean up text
@@ -230,7 +230,7 @@ console.log(profanity.clean(`So much damn code`)) // Clean up text
  * @usage new <Services>().sloc.readFile(string)
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let { readFileSync } = require(`fs`)
 let sloc = new services().sloc
 
@@ -250,7 +250,7 @@ console.log(JSON.stringify(sloc.readFile(readFileSync(`./example.js`, `utf8`))))
  * @usage new <Services>().weather.get(object)
  */
 
-let services = require(`jonin-services`)
+let services = require("jonin-services")
 let weather = new services().weather
 
 await weather.get({ degreeType: `F`, lang: `en-US`, search: `dallas, tx` }, (err, res) => {
