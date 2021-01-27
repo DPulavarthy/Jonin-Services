@@ -110,13 +110,13 @@ console.log(historyChat) // Request a message with history
 let services = require("jonin-services")
 let endecodify = new services().endecodify
 
-console.log(endecodify.encode(`Hi`)) // Encode normal text
+console.log(endecodify.encode(`Hi`).data) // Encode normal text
 // Console: 8x05h 8x09E 8x07o 8x22iI
-console.log(endecodify.decode(`8x05h 8x09E 8x07o 8x22iI`)) // Decode the encoded string
+console.log(endecodify.decode(`8x05h 8x09E 8x07o 8x22iI`).data) // Decode the encoded string
 // Console: Hi
-console.log(process.encode(`Hi`)) // Access module through `process`
+console.log(process.encode(`Hi`).data) // Access module through `process`
 // Console: 8x05h 8x09E 8x07o 8x22iI
-console.log(process.decode(`8x05h 8x09E 8x07o 8x22iI`))
+console.log(process.decode(`8x05h 8x09E 8x07o 8x22iI`).data)
 // Console: Hi
 ```
 ```bash

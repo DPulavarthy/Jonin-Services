@@ -91,9 +91,9 @@ module.exports.endecodify = async _ => {
     let encoded = endecodify.encode(`Hi`).data
     let processEncoded = process.encode(`Hi`).data
     console.log(`\tEncode:`, `Hi`, `=>`, encoded)
-    console.log(`\tDecode:`, encoded, `=>`, endecodify.decode(encoded))
+    console.log(`\tDecode:`, encoded, `=>`, endecodify.decode(encoded).data)
     console.log(`\tProcess Encode:`, `Hi`, `=>`, processEncoded)
-    console.log(`\tProcess Decode:`, processEncoded, `=>`, process.decode(processEncoded))
+    console.log(`\tProcess Decode:`, processEncoded, `=>`, process.decode(processEncoded).data)
     return
 }
 
