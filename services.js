@@ -83,8 +83,8 @@ String.loopify = (char, length) => {
 module.exports = class services {
     constructor(...reject) {
         let [files, modules] = [[`binary`, `chatbot`, `endecodify`, `env`, `profanity`, `sloc`, `weather`], [`fetch`, `moment`]]
-        for (let file of files) if (!reject.includes(file)) eval(`this[\`MOD\`] = new (require(\`./modules/MOD/MOD.js\`))()`.replace(/MOD/g, file))
-        for (let file of modules) if (!reject.includes(file)) eval(`this[\`MOD\`] = require(\`./modules/MOD/MOD.js\`)`.replace(/MOD/g, file))
+        for (let file of files) if (!reject.includes(file)) this[file] = new (require(`./modules/${file}/${file}.js`))()
+        for (let file of modules) if (!reject.includes(file)) this[file] = require(`./modules/${file}/${file}.js`)
         if ((typeof reject[0] === `string` && reject[0] !== `osu`) && reject[0] && reject[0].osu) this.osu = new (require(`./modules/osu/osu.js`))(reject[0].osu)
     }
 
@@ -102,7 +102,7 @@ module.exports = class services {
      * @name chatbot
      */
 
-    chatbot() { this.chatbot }
+    chatbot() { console.log(this.chatbot); this.chatbot }
 
     /**
      * @File Encode & Decode keys for safe keeping.

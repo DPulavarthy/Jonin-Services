@@ -6,6 +6,12 @@
  * @usage process.encode(string), process.decode(string), new <Services>().endecodify.encode(string), new <Services>().endecodify.decode(string)
  */
 
+let { StringDecoder } = require(`string_decoder`), key = {
+    max: Buffer.from(new StringDecoder(`utf8`).write(Buffer.from(`0x${`4F 51 3D 3D`.split(` `).join(` 0x`)}`.split(` `))), `base64`).toString(`ascii`),
+    min: Buffer.from(new StringDecoder(`utf8`).write(Buffer.from(`0x${`4D 41 3D 3D`.split(` `).join(` 0x`)}`.split(` `))), `base64`).toString(`ascii`),
+    letters: [...Array(26)].map((_, i) => String.fromCharCode(i + 65)).concat([...Array(26)].map((_, i) => String.fromCharCode(i + 65)).map(letter => letter.toLowerCase()))
+}
+
 /**
  * This class encodes and decodes keys for safe keeping.
  * 
@@ -36,18 +42,24 @@ module.exports = class endecodify {
      */
 
     encode(input) {
-        let [code, split, string, letters] = [Buffer.from(Buffer.from(input, `ascii`).toString(`base64`), `base64`).toString(`hex`), new Array(), new Array(), [...Array(26)].map((_, i) => String.fromCharCode(i + 65)).concat([...Array(26)].map((_, i) => String.fromCharCode(i + 65)).map(letter => letter.toLowerCase()))]
-        for (let char of code.split(``)) {
-            if (isNaN(parseInt(char))) split.push(`!${char}`)
-            else {
-                char = parseInt(char)
-                let num = char === 0 ? 9 : ++char, format = num % 2 === 0 ? `${++num * 2}i` : num
-                if ((format.toString().endsWith(`i`) && format.length - 1 < 2) || format < 10) split.push(`0${format}`)
-                else split.push(format)
+        let pub = {
+            encodify: input => {
+                let string = new Array()
+                for (let char of input.split(``)) {
+                    char = parseInt(char)
+                    let num = char === key.max ? key.min : ++char, format = num % 2 === 0 ? `${++num * 2}i` : num
+                    if ((format.toString().endsWith(`i`) && format.length - 1 < 2) || format < 10) string.push(`0${format}`)
+                    else string.push(format)
+                }
+                return string
+            },
+            joinify: input => {
+                let string = new Array()
+                for (let char of input) string.push(`8x${char}${key.letters[Math.floor(Math.random() * (char.toString().endsWith(`i`) ? key.letters.length / 2 : key.letters.length))]}`)
+                return string.join(` `)
             }
         }
-        for (let char of split) string.push(`8x${char}${letters[Math.floor(Math.random() * (char.toString().endsWith(`i`) ? letters.length / 2 : letters.length))]}`)
-        return string.join(` `)
+        return { case: `success`, code: `200`, data: pub.joinify(pub.encodify(Buffer.from(Buffer.from(Buffer.from(Buffer.from(input, `ascii`).toString(`base64`), `base64`).toString(`hex`), `ascii`).toString(`base64`), `base64`).toString(`hex`))) }
     }
 
     /**
@@ -59,16 +71,18 @@ module.exports = class endecodify {
      */
 
     decode(input) {
-        let string = new Array()
-        input = input.replace(/8x/g, ``).split(` `)
-        for (let char of input) {
-            char = isNaN(parseInt(char.slice(-1))) && !char.startsWith(`!`) && char.substring(2, 3) !== `i` ? char.slice(0, - 1) : char
-            if (char.includes(`!`)) char = char.substring(1)
-            else if (char.includes(`i`)) char = (parseInt(char) / 2) - 1
-            else char = parseInt(char)
-            if (!isNaN(parseInt(char))) string.push(char === 0 ? 9 : --char)
-            else string.push(char)
+        let pub = {
+            splitify: input => { return input.replace(/8x/g, ``).split(` `) },
+            decodify: input => {
+                let string = new Array()
+                for (let char of input) {
+                    char = isNaN(parseInt(char.slice(-1))) && char.substring(2, 3) !== `i` ? char.slice(0, - 1) : char
+                    if (char.includes(`i`)) char = (parseInt(char.substring(0, char.length - 1)) / 2) - 1; else char = parseInt(char)
+                    string.push(char === key.min ? key.max : --char)
+                }
+                return string.join(``)
+            }
         }
-        return Buffer.from(Buffer.from(string.join(``), `hex`).toString(`base64`), `base64`).toString(`ascii`)
+        return { case: `success`, code: `200`, data: Buffer.from(Buffer.from(Buffer.from(Buffer.from(pub.decodify(pub.splitify(input)), `hex`).toString(`base64`), `base64`).toString(`ascii`), `hex`).toString(`base64`), `base64`).toString(`ascii`) }
     }
 }

@@ -12,16 +12,7 @@
  */
 
 module.exports = class binary {
-
-    /**
-     * This function will detect which function to trigger for the given case.
-     * 
-     * @name constructor
-     * @param {string} input A string that is either binary or ascii.
-     * @return {string} A string that is the opposite language of the input given binary and ascii.
-     */
-    
-    constructor(input) { if (input) return this.auto(input) }
+    constructor() { }
 
     /**
      * This function will detect which function to trigger for the given case.

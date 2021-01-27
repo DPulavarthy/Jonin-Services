@@ -1,10 +1,10 @@
 {
   "name": "jonin-services",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A cluster of recoded modules for ease of access",
   "main": "services.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node example.js"
   },
   "repository": {
     "type": "git",

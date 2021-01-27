@@ -58,7 +58,7 @@ module.exports.chatbot = async _ => {
      */
 
     let chatbot = new services().chatbot
-
+    
     console.log(`\nJonin-Services: Testing Modules [chatbot]\n`)
     let noHistoryChat = await chatbot.get(`Hi`)
     console.log(`\tHistory [\u274C]:`, `Input: Hi`, `||`, `Result: ${noHistoryChat}`)
@@ -88,8 +88,8 @@ module.exports.endecodify = async _ => {
     let endecodify = new services().endecodify
 
     console.log(`\nJonin-Services: Testing Modules [endecodify]\n`)
-    let encoded = endecodify.encode(`Hi`)
-    let processEncoded = process.encode(`Hi`)
+    let encoded = endecodify.encode(`Hi`).data
+    let processEncoded = process.encode(`Hi`).data
     console.log(`\tEncode:`, `Hi`, `=>`, encoded)
     console.log(`\tDecode:`, encoded, `=>`, endecodify.decode(encoded))
     console.log(`\tProcess Encode:`, `Hi`, `=>`, processEncoded)

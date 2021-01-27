@@ -1,6 +1,15 @@
 <p>
     <a href="https://twitter.com/iKurasad">
-        <img src="https://img.shields.io/badge/Creator-Kurasad%232521-%23ff0092" alt="Kurasad#2521" />
+        <img src="https://img.shields.io/badge/creator-Kurasad%232521-%23ff0092" alt="Kurasad#2521" />
+    </a>
+    <a href="https://github.com/DPulavarthy/Jonin-Services/blob/main/LICENSE">
+        <img src="https://img.shields.io/npm/l/jonin-services" alt="License" />
+    </a>
+    <a href="https://www.npmjs.com/package/jonin-services">
+        <img src="https://img.shields.io/npm/dt/jonin-services" alt="Downloads" />
+    </a>
+    <a href="https://www.npmjs.com/package/jonin-services">
+        <img src="https://img.shields.io/github/package-json/v/DPulavarthy/Jonin-Services" alt="Version" />
     </a>
     <a href="https://github.com/DPulavarthy/Jonin-Services"
         title="All code regarding Jonin and Jonin Services is protected.">
