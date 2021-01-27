@@ -1,6 +1,6 @@
 {
   "name": "jonin-services",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A cluster of recoded modules for ease of access",
   "main": "services.js",
   "scripts": {
