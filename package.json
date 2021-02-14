@@ -1,6 +1,6 @@
 {
   "name": "jonin-services",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A cluster of recoded modules for ease of access",
   "main": "services.js",
   "scripts": {
@@ -37,5 +37,8 @@
   "bugs": {
     "url": "https://github.com/DPulavarthy/Jonin-Services/issues"
   },
-  "homepage": "https://github.com/DPulavarthy/Jonin-Services#readme"
+  "homepage": "https://github.com/DPulavarthy/Jonin-Services#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
 }

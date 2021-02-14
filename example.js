@@ -5,7 +5,6 @@ setTimeout(_ => this.run(), 2000)
 module.exports.run = async _ => {
     await this.binary()
     await this.chatbot()
-    await this.endecodify()
     await this.env()
     await this.fetch()
     await this.moment()

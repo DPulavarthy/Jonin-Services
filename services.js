@@ -7,19 +7,19 @@
  */
 
 /**
- * A custom error for all client services.
+ * This function merges multiple objects into one.
  * 
- * @name serviceError
- * @param {string} message A message to describe the error.
- * @return {Error} Logs a service error and exits the process.
+ * @name mergify
+ * @param {object} main Master object (All other objects merge into this).
+ * @param {array} subs Array of objects to merge into `main`.
+ * @return {object} Master object (`main`) with `subs` merged.
  */
 
-class serviceError extends Error {
-    constructor(message) {
-        super(message)
-        this.name = this.constructor.name
-        Error.captureStackTrace(this, this.constructor)
-    }
+ Object.mergify = (main, ...subs) => {
+    if (typeof main !== `object` || main === null) throw new serviceError(`Must pass an object type data`)
+    for (let obj of subs) if (typeof obj !== `object` || obj === null) throw new serviceError(`Must pass an object type data`)
+    for (let obj of subs) for (let attrname in obj) main[attrname] = obj[attrname]
+    return main
 }
 
 /**
@@ -32,10 +32,10 @@ class serviceError extends Error {
 
 module.exports = class services {
     constructor(key) {
-        let [files, modules] = [[`binary`, `chatbot`, `endecodify`, `env`, `profanity`, `sloc`, `weather`], [`fetch`, `moment`]]
-        for (let file of files) if (!reject.includes(file)) this[file] = new (require(`./modules/${file}/${file}.js`))()
-        for (let file of modules) if (!reject.includes(file)) this[file] = require(`./modules/${file}/${file}.js`)
-        if (key.osu) this.osu = new (require(`./modules/osu/osu.js`))(reject[0].osu)
+        let [files, modules] = [[`binary`, `chatbot`, `env`, `profanity`, `sloc`, `weather`], [`fetch`, `moment`]]
+        for (let file of files) this[file] = new (require(`./modules/${file}/${file}.js`))()
+        for (let file of modules) this[file] = require(`./modules/${file}/${file}.js`)
+        if (key && key.osu) this.osu = new (require(`./modules/osu/osu.js`))(key.osu)
     }
 
     /**
