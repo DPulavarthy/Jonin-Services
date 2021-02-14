@@ -36,7 +36,6 @@
 | ------------------------------------------------------------------------------- | ----- | --------------------------------- |
 | [decode-encode-binary](https://www.npmjs.com/package/decode-encode-binary)      | **❯** | [binary](modules/binary)          |
 | [cleverbot-free](https://www.npmjs.com/package/cleverbot-free)                  | **❯** | [chatbot](modules/chatbot)        |
-| [endecodify](https://www.npmjs.com/package/endecodify)                          | **❯** | [endecodify](modules/endecodify)  |
 | [dotenv](https://www.npmjs.com/package/dotenv)                                  | **❯** | [env](modules/env)                |
 | [node-fetch](https://www.npmjs.com/package/node-fetch)                          | **❯** | [fetch](modules/fetch)            |
 | [moment-duration-format](https://www.npmjs.com/package/moment-duration-format)  | **❯** | [moment](modules/moment)          |
@@ -94,34 +93,6 @@ console.log(noHistoryChat) // Start a conversation/No history avaliable
 let historyChat = await chatbot.get(`Hi`, [`Hello There!`, `What's up?`])
 console.log(historyChat) // Request a message with history
 // Console: How are you?
-```
-
-#### ❯ Endecodify  
-[Click here for more information](example.js#L70)
-```js
-/**
- * This class encodes and decodes keys for safe keeping.
- * 
- * Check console for args (e.g. npm start encode text).
- * 
- * @name endecodify
- */
-
-let services = require("jonin-services")
-let endecodify = new services().endecodify
-
-console.log(endecodify.encode(`Hi`).data) // Encode normal text
-// Console: 8x05h 8x09E 8x07o 8x22iI
-console.log(endecodify.decode(`8x05h 8x09E 8x07o 8x22iI`).data) // Decode the encoded string
-// Console: Hi
-console.log(process.encode(`Hi`).data) // Access module through `process`
-// Console: 8x05h 8x09E 8x07o 8x22iI
-console.log(process.decode(`8x05h 8x09E 8x07o 8x22iI`).data)
-// Console: Hi
-```
-```bash
-node . encode Hi
-node . decode 8x05h 8x09E 8x07o 8x22iI
 ```
 
 #### ❯ Env 

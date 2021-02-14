@@ -23,56 +23,6 @@ class serviceError extends Error {
 }
 
 /**
- * This function merges multiple objects into one.
- * 
- * @name mergify
- * @param {object} main Master object (All other objects merge into this).
- * @param {array} subs Array of objects to merge into `main`.
- * @return {object} Master object (`main`) with `subs` merged.
- */
-
-Object.mergify = (main, ...subs) => {
-    if (typeof main !== `object` || main === null) throw new serviceError(`Must pass an object type data`)
-    for (let obj of subs) if (typeof obj !== `object` || obj === null) throw new serviceError(`Must pass an object type data`)
-    for (let obj of subs) for (let attrname in obj) main[attrname] = obj[attrname]
-    return main
-}
-
-/**
- * This function makes all numbers the same length.
- * 
- * @name equalify
- * @param {array} nums Array of nums (positive & negative).
- * @return {array} Array of modified nums (strings) all the same length.
- */
-
-Number.equalify = (...nums) => {
-    for (let num of nums) if (typeof num !== `number`) throw new serviceError(`Must pass an integer type data`)
-    let max = Math.max(...nums).toString().length
-    for (let i = 0; i < nums.length; i++) {
-        let [stringify, zero] = [nums[i].toString(), new String()]
-        for (let i = 0; i < max - stringify.length; i++) zero += `0`
-        nums[i] = nums[i] > 0 ? `${zero}${nums[i]}` : `-${zero}${stringify.substring(1)}`
-    }
-    return nums
-}
-
-/**
- * This function returns a string with all chracters the given `char`.
- * 
- * @name loopify
- * @param {string} char Character to be looped.
- * @param {number} length Number of time to loop.
- * @return {string} String with`char` looped.
- */
-
-String.loopify = (char, length) => {
-    let string = new String()
-    for (let i = 0; i < length; i++) string += char
-    return string
-}
-
-/**
  * This class sets-up all the modules.
  * 
  * @name services
@@ -81,11 +31,11 @@ String.loopify = (char, length) => {
  */
 
 module.exports = class services {
-    constructor(...reject) {
+    constructor(key) {
         let [files, modules] = [[`binary`, `chatbot`, `endecodify`, `env`, `profanity`, `sloc`, `weather`], [`fetch`, `moment`]]
         for (let file of files) if (!reject.includes(file)) this[file] = new (require(`./modules/${file}/${file}.js`))()
         for (let file of modules) if (!reject.includes(file)) this[file] = require(`./modules/${file}/${file}.js`)
-        if ((typeof reject[0] === `string` && reject[0] !== `osu`) && reject[0] && reject[0].osu) this.osu = new (require(`./modules/osu/osu.js`))(reject[0].osu)
+        if (key.osu) this.osu = new (require(`./modules/osu/osu.js`))(reject[0].osu)
     }
 
     /**
@@ -102,15 +52,7 @@ module.exports = class services {
      * @name chatbot
      */
 
-    chatbot() { console.log(this.chatbot); this.chatbot }
-
-    /**
-     * @File Encode & Decode keys for safe keeping.
-     * 
-     * @name endecodify
-     */
-
-    endecodify() { this.endecodify }
+    chatbot() { this.chatbot }
 
     /**
      * @File Access `.env` through process.

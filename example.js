@@ -67,36 +67,6 @@ module.exports.chatbot = async _ => {
     return
 }
 
-module.exports.endecodify = async _ => {
-
-    /**
-     * @file Encode & Decode keys for safe keeping.
-     * 
-     * @name endecodify
-     * @see Object.mergify() Found in `services.js`
-     * @usage process.encode(string), process.decode(string), new <Services>().endecodify.encode(string), new <Services>().endecodify.decode(string)
-     */
-
-    /**
-     * This class encodes and decodes keys for safe keeping.
-     * 
-     * Check console for args (e.g. npm start encode text).
-     * 
-     * @name endecodify
-     */
-
-    let endecodify = new services().endecodify
-
-    console.log(`\nJonin-Services: Testing Modules [endecodify]\n`)
-    let encoded = endecodify.encode(`Hi`).data
-    let processEncoded = process.encode(`Hi`).data
-    console.log(`\tEncode:`, `Hi`, `=>`, encoded)
-    console.log(`\tDecode:`, encoded, `=>`, endecodify.decode(encoded).data)
-    console.log(`\tProcess Encode:`, `Hi`, `=>`, processEncoded)
-    console.log(`\tProcess Decode:`, processEncoded, `=>`, process.decode(processEncoded).data)
-    return
-}
-
 module.exports.env = async _ => {
 
     /**
