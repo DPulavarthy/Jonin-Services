@@ -1,6 +1,6 @@
 {
   "name": "jonin-services",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "A cluster of recoded modules for ease of access",
   "main": "services.js",
   "scripts": {
@@ -45,6 +45,6 @@
     "discord-music-player": "^6.4.1",
     "moment": "^2.29.1",
     "opusscript": "0.0.7",
-    "mongodb": "^3.6.3"
+    "mongodb": "3.6.3"
   }
 }
