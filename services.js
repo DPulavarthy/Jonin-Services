@@ -15,9 +15,9 @@
  * @return {object} Master object (`main`) with `subs` merged.
  */
 
- Object.mergify = (main, ...subs) => {
-    if (typeof main !== `object` || main === null) throw new serviceError(`Must pass an object type data`)
-    for (let obj of subs) if (typeof obj !== `object` || obj === null) throw new serviceError(`Must pass an object type data`)
+Object.mergify = (main, ...subs) => {
+    if (typeof main !== `object` || main === null) throw new Error(`Must pass an object type data`)
+    for (let obj of subs) if (typeof obj !== `object` || obj === null) throw new Error(`Must pass an object type data`)
     for (let obj of subs) for (let attrname in obj) main[attrname] = obj[attrname]
     return main
 }

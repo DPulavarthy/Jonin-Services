@@ -23,7 +23,8 @@ module.exports = class profanity {
      */
 
     clean(input) {
-        for (let word of this.data) input = eval(`\`${input}\`.replace(/${word}/g, \`*****\`)`)
-        return input
+        input = input.split(/ +/g)
+        for (let word of this.data) for (let i = 0; i < input.length; i++) if (input[i].match(new RegExp(`\\b(\\w*^${word}\\w*)\\b`, `g`))) input[i] = `${input[i].slice(0, 1)}${`\\\*`.repeat(input[i].length - 1)}`
+        return input.join(` `)
     }
 }

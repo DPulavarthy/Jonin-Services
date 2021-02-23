@@ -8,21 +8,6 @@
 let osu = require(`./osu.js`)
 
 /**
- * osu! resource: Event.
- * 
- * @name Event
- */
-
-module.exports.Event = class Event extends osu {
-	constructor(config, data) {
-		super(config, data)
-		Objects.mergify(this, { html: data.display_html, beatmapId: data.beatmap_id, beatmapsetId: data.beatmapset_id, raw_date: data.date, epicFactor: this.Constants.getNumeric(config.parseNumeric)(data.epicfactor) })
-	}
-
-	get date() { if (this._date !== undefined) return this._date; this._date = new Date(`${this.raw_date} UTC`); return this._date }
-}
-
-/**
  * osu! resource: MultiplayerScore.
  * 
  * @name MultiplayerScore
@@ -133,8 +118,7 @@ module.exports.User = class User extends osu {
 			level: num(data.level),
 			accuracy: num(data.accuracy),
 			secondsPlayed: num(data.total_seconds_played),
-			raw_joinDate: data.join_date,
-			events: data.events.map(ev => new this.Event(config, ev))
+			raw_joinDate: data.join_date
 		})
 		for (let prop of [`fetch`, `token`, `Constants`, `baseUrl`, `notFoundAsError`, `completeScores`, `parseNumeric`, `sets`]) delete this[prop]
 	}

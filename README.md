@@ -34,15 +34,25 @@
 
 | Old                                                                             |       | New                               |
 | ------------------------------------------------------------------------------- | ----- | --------------------------------- |
-| [decode-encode-binary](https://www.npmjs.com/package/decode-encode-binary)      | **❯** | [binary](modules/binary)          |
-| [cleverbot-free](https://www.npmjs.com/package/cleverbot-free)                  | **❯** | [chatbot](modules/chatbot)        |
-| [dotenv](https://www.npmjs.com/package/dotenv)                                  | **❯** | [env](modules/env)                |
-| [node-fetch](https://www.npmjs.com/package/node-fetch)                          | **❯** | [fetch](modules/fetch)            |
-| [moment-duration-format](https://www.npmjs.com/package/moment-duration-format)  | **❯** | [moment](modules/moment)          |
-| [node-osu](https://www.npmjs.com/package/node-osu)                              | **❯** | [osu](modules/osu)                |
-| [@2toad/profanity](https://www.npmjs.com/package/@2toad/profanity)              | **❯** | [profanity](modules/profanity)    |
-| [sloc-count](https://www.npmjs.com/package/sloc-count)                          | **❯** | [sloc](modules/sloc)              |
-| [weather-js](https://www.npmjs.com/package/weather-js)                          | **❯** | [weather](modules/weather)        |
+| [decode-encode-binary](https://www.npmjs.com/package/decode-encode-binary)      | ❯❯    | [binary](modules/binary)          |
+| [cleverbot-free](https://www.npmjs.com/package/cleverbot-free)                  | ❯❯    | [chatbot](modules/chatbot)        |
+| [dotenv](https://www.npmjs.com/package/dotenv)                                  | ❯❯    | [env](modules/env)                |
+| [node-fetch](https://www.npmjs.com/package/node-fetch)                          | ❯❯    | [fetch](modules/fetch)            |
+| [moment-duration-format](https://www.npmjs.com/package/moment-duration-format)  | ❯❯    | [moment](modules/moment)          |
+| [node-osu](https://www.npmjs.com/package/node-osu)                              | ❯❯    | [osu](modules/osu)                |
+| [@2toad/profanity](https://www.npmjs.com/package/@2toad/profanity)              | ❯❯    | [profanity](modules/profanity)    |
+| [sloc-count](https://www.npmjs.com/package/sloc-count)                          | ❯❯    | [sloc](modules/sloc)              |
+| [weather-js](https://www.npmjs.com/package/weather-js)                          | ❯❯    | [weather](modules/weather)        |
+
+| Other Modules              |
+| -------------------------- |
+| canvas 2.6.1               |
+| discord.js 12.5.1          |
+| elara-services 1.3.0       |
+| discord-music-player 6.4.1 |
+| moment 2.29.1              |
+| opusscript 0.0.7           |
+| mongodb 3.6.3              |
 
 ## Usage
 
@@ -54,7 +64,7 @@ npm install jonin-services
 ### Modules
 
 #### ❯ Binary 
-[Click here for more information](example.js#L18)
+[Click here for more information](modules/binary)
 ```js
 /**
  * Converts input text into binary or ascii depending on params.
@@ -76,7 +86,7 @@ console.log(binary.decode(`0100100001101001`)) // Force decode
 ```
 
 #### ❯ Chatbot 
-[Click here for more information](example.js#L43)
+[Click here for more information](modules/chatbot)
 ```js
 /**
  * Takes the history of the chat and the current message to make a proper response.
@@ -96,7 +106,7 @@ console.log(historyChat) // Request a message with history
 ```
 
 #### ❯ Env 
-[Click here for more information](example.js#L100)
+[Click here for more information](modules/env)
 ```js
 /**
  * @file Access `.env` through process.
@@ -115,7 +125,7 @@ console.log(process.env.TOKEN) // Access env data
 ```
 
 #### ❯ Fetch 
-[Click here for more information](example.js#L117)
+[Click here for more information](modules/fetch)
 ```js
 /**
  * @file node-fetch module.
@@ -133,9 +143,7 @@ console.log(await jsonFetch.json()) // Log JSON
 ```
 
 #### ❯ Moment 
-[Click here for more information](example.js#L134)
-
-⚠️ Make sure to install [npmjs/moment](https://www.npmjs.com/package/moment) before running
+[Click here for more information](modules/moment)
 ```js
 /**
  * @file moment-duration-format module.
@@ -154,7 +162,7 @@ console.log(moment.duration((new Date().getTime() + 500000000) - new Date().getT
 ```
 
 #### ❯ Osu 
-[Click here for more information](example.js#L151)
+[Click here for more information](modules/osu)
 ```js
 /**
  * @file osu! info module.
@@ -175,7 +183,7 @@ console.log(`\tUser Fetch:`, `fangary12`, `=>`, JSON.stringify(osuUser))
 ```
 
 #### ❯ Profanity 
-[Click here for more information](example.js#L177)
+[Click here for more information](modules/profanity)
 ```js
 /**
  * @file Clear out profanity from text.
@@ -192,7 +200,7 @@ console.log(profanity.clean(`So much damn code`)) // Clean up text
 ```
 
 #### ❯ Sloc 
-[Click here for more information](example.js#L199)
+[Click here for more information](modules/sloc)
 ```js
 /**
  * @file File data and sloc getter.
@@ -211,7 +219,7 @@ console.log(JSON.stringify(sloc.readFile(readFileSync(`./example.js`, `utf8`))))
 
 
 #### ❯ Weather 
-[Click here for more information](example.js#L222)
+[Click here for more information](modules/weather)
 ```js
 /**
  * @file Current/Forcast weather fetcher.
